@@ -15,3 +15,12 @@ app.get('/', (_request, response) => {
 app.listen(PORT, () => {
   console.log('Online');
 });
+
+// REQUISITOS
+
+  // 1 
+const talker = './talker.json';
+
+app.get('/talker', (_request, response) => {
+  response.status(HTTP_OK_STATUS).send(talker);
+});
