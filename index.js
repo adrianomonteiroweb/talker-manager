@@ -12,15 +12,14 @@ app.get('/', (_request, response) => {
   response.status(HTTP_OK_STATUS).send();
 });
 
-app.listen(PORT, () => {
-  console.log('Online');
-});
-
 // REQUISITOS
 
-  // 1 
-const talker = './talker.json';
+// rotas
+const talker = require('./routers/talkerRoute.js');
 
-app.get('/talker', (_request, response) => {
-  response.status(HTTP_OK_STATUS).send(talker);
+// 1 
+app.get('/talker', talker);
+
+app.listen(PORT, () => {
+  console.log('Online');
 });
