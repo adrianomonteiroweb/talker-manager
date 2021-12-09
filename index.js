@@ -15,10 +15,13 @@ app.get('/', (_request, response) => {
 // REQUISITOS
 
 // rotas
-const talker = require('./routers/talkerRoute.js');
+const { talker } = require('./routers');
 
-// 1 
+// requisito 1 
 app.get('/talker', talker);
+
+// requisito 2
+app.get('/talker/:id', talker);
 
 app.listen(PORT, () => {
   console.log('Online');
