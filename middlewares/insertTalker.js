@@ -37,15 +37,6 @@ const ageVerify = (request, response, next) => {
   next();
 };
 
-const fieldTalkVerify = (request, response, next) => {
-  const { talk } = request.body;
-  const res = response.status(ERROR_STATUS).json(NOT_FOUND_TALK);
-
-  if (!talk || !talk.watchedAt || talk.rate === undefined) return res;
-
-  next();
-};
-
 const talkVerify = (request, response, next) => {
   const { talk } = request.body;
 
@@ -54,6 +45,16 @@ const talkVerify = (request, response, next) => {
   if (!regex.test(talk.watchedAt)) return response.status(ERROR_STATUS).json(INVALID_DATE);
 
   if (talk.rate < 0 || talk.rate > 5) return response.status(ERROR_STATUS).json(INVALID_RATE);
+
+  next();
+};
+
+const fieldTalkVerify = (request, response, next) => {
+  const { talk } = request.body;
+
+  if (!talk || !talk.watchedAt || talk.rate === undefined) {
+    return response.status(ERROR_STATUS).json(NOT_FOUND_TALK);
+  }
 
   next();
 };
