@@ -15,7 +15,7 @@ const updateTalker = async (request, response) => {
     talk,
   };
 
-  const data = await read(PATH_FILE, 'utf-8');
+  const data = await read(PATH_FILE, 'utf8');
   // array.splice(índice, número de elementos, elemento, elemento);
   // https://medium.com/devzera/vamos-esclarecer-a-confus%C3%A3o-dos-m%C3%A9todos-slice-splice-e-split-em-javascript-a0c0e6f5b5b4
   data.splice(data.findIndex((talker) => talker.id === Number(id)), 1, updatedBody);

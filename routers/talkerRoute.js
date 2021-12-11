@@ -21,8 +21,8 @@ router.post(
   tokenValidation,
   nameVerify,
   ageVerify,
-  fieldTalkVerify,
   talkVerify,
+  fieldTalkVerify,
   insertTalk,
 );
 
@@ -31,8 +31,8 @@ router.put(
   tokenValidation,
   nameVerify,
   ageVerify,
-  fieldTalkVerify,
   talkVerify,
+  fieldTalkVerify,
   updateTalker,
 );
 

@@ -79,7 +79,7 @@ const insertTalk = async (request, response) => {
 module.exports = {
   nameVerify,
   ageVerify,
-  fieldTalkVerify,
   talkVerify,
+  fieldTalkVerify,
   insertTalk,
 };
