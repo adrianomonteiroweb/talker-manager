@@ -65,9 +65,9 @@ const insertTalk = async (request, response) => {
   const data = await read(PATH_FILE);
 
   const addedObject = {
-    id: data.length + 1,
     name,
     age: Number(age),
+    id: data.length + 1,
     talk,
   };
 

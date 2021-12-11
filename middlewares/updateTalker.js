@@ -9,9 +9,9 @@ const updateTalker = async (request, response) => {
   const { name, age, talk } = request.body;
 
   const updatedBody = {
-    id: Number(id),
     name,
     age: Number(age),
+    id: Number(id),
     talk,
   };
 
