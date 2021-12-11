@@ -2,7 +2,7 @@ const fs = require('fs/promises');
 
 const read = async (object) => {
   try {
-    const body = await fs.readFile(object, 'utf-8');
+    const body = await fs.readFile(object, 'utf8');
     return JSON.parse(body);
   } catch (e) {
     return null;
