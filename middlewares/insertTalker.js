@@ -1,4 +1,4 @@
-const { contentFunc, read } = require('../helpers/readAndContents');
+const { bodyFunc, read } = require('../helpers/readAndBody');
 
 const PATH_FILE = './talker.json';
 
@@ -71,7 +71,7 @@ const insertTalk = async (request, response) => {
     talk,
   };
 
-  await contentFunc(PATH_FILE, addedObject);
+  await bodyFunc(PATH_FILE, addedObject);
 
   return response.status(STATUS_OK).json(addedObject);
 };

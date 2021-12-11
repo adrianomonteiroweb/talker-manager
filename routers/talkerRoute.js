@@ -10,6 +10,7 @@ const {
   fieldTalkVerify,
   insertTalk,
 } = require('../middlewares/insertTalker');
+const updateTalker = require('../middlewares/updateTalker');
 
 router.get('/', getAllTalkers);
 
@@ -23,6 +24,16 @@ router.post(
   fieldTalkVerify,
   talkVerify,
   insertTalk,
+);
+
+router.put(
+  '/:id',
+  tokenValidation,
+  nameVerify,
+  ageVerify,
+  fieldTalkVerify,
+  talkVerify,
+  updateTalker,
 );
 
 module.exports = router;

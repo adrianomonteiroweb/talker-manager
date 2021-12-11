@@ -1,4 +1,4 @@
-const { read } = require('../helpers/readAndContents');
+const { read } = require('../helpers/readAndBody');
 
 const PATH = './talker.json';
 const STATUS = 200;
