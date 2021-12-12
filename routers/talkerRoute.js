@@ -4,8 +4,9 @@ const router = require('express').Router();
 const getAllTalkers = require('../middlewares/getAllTalkers');
 // get /:id
 const getTalkerById = require('../middlewares/getTalkerById');
-// post / e put /:id
+// post / , put /:id e delete /:id
 const tokenValidation = require('../middlewares/tokenValidation');
+// post / e put /:id
 const nameVerify = require('../middlewares/nameVerify');
 const ageVerify = require('../middlewares/ageVerify');
 const { talkVerify, fieldTalkVerify } = require('../middlewares/talkVerify');
@@ -13,6 +14,8 @@ const { talkVerify, fieldTalkVerify } = require('../middlewares/talkVerify');
 const insertTalk = require('../middlewares/insertTalker');
 // put /:id
 const updateTalker = require('../middlewares/updateTalker');
+// delete /:id
+const deleteTalker = require('../middlewares/deleteTalker');
 
 router.get(
   '/',
@@ -42,6 +45,12 @@ router.put(
   fieldTalkVerify,
   talkVerify,
   updateTalker,
+);
+
+router.delete(
+  '/:id',
+  tokenValidation,
+  deleteTalker,
 );
 
 module.exports = router;
