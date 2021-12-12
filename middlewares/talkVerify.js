@@ -13,7 +13,9 @@ const talkVerify = (request, response, next) => {
 
   if (!regex.test(talk.watchedAt)) return response.status(ERROR_STATUS).json(INVALID_DATE);
 
-  if (talk.rate < 0 || talk.rate > 5) return response.status(ERROR_STATUS).json(INVALID_RATE);
+  if (Number(talk.rate < 1) || Number(talk.rate) > 5) {
+    return response.status(ERROR_STATUS).json(INVALID_RATE);
+  }
 
   next();
 };
